@@ -1,0 +1,1865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101b13">
+
+<title>Sri Sakthi Coirs | Premium Coir Products & Global Exports</title>
+<meta name="description" content="Sri Sakthi Coirs, Pollachi, India. Premium cocopeat blocks, briquettes, grow bags, coco chips and coconut fibre for global buyers.">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        forest: '#101b13',
+        leaf: '#263c29',
+        moss: '#536c43',
+        cream: '#eee9dc',
+        gold: '#c7a66b'
+      },
+      fontFamily: {
+        sans: ['DM Sans', 'sans-serif'],
+        display: ['Playfair Display', 'serif']
+      }
+    }
+  }
+};
+</script>
+
+<!-- Animation libraries -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: auto;
+  background: #101b13;
+  scroll-padding-top: 90px;
+}
+
+body {
+  margin: 0;
+  background: #101b13;
+  color: #eee9dc;
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Playfair Display', serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+::selection {
+  background: #c7a66b;
+  color: #101b13;
+}
+
+.container-main {
+  width: min(1240px, 90%);
+  margin-inline: auto;
+}
+
+.eyebrow {
+  color: #c7a66b;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+}
+
+.gold-line {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #c7a66b, transparent);
+}
+
+.nav-link {
+  color: #eee9dcaa;
+  transition: color .3s ease;
+}
+
+.nav-link:hover {
+  color: #c7a66b;
+}
+
+.btn-gold {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background: #c7a66b;
+  color: #101b13;
+  transition: .3s ease;
+}
+
+.btn-gold:hover {
+  background: #eee9dc;
+  transform: translateY(-3px);
+}
+
+.outline-gold {
+  border: 1px solid #c7a66b88;
+  transition: .3s ease;
+}
+
+.outline-gold:hover {
+  background: #c7a66b;
+  color: #101b13;
+}
+
+/* HERO */
+
+.hero {
+  min-height: 100svh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, #0b160ef0, #0b160e66),
+    linear-gradient(0deg, #101b13, transparent 40%),
+    url('https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?auto=format&fit=crop&w=2200&q=85')
+    center / cover;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-title {
+  font-size: clamp(3.4rem, 8vw, 8rem);
+  line-height: .98;
+  letter-spacing: -.055em;
+}
+
+.scroll-indicator {
+  animation: float 2s infinite;
+}
+
+@keyframes float {
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+/* GENERAL */
+
+.section-light {
+  background: #eee9dc;
+  color: #101b13;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(35px);
+}
+
+.section-heading {
+  font-size: clamp(2.8rem, 6vw, 5.8rem);
+  line-height: 1.08;
+}
+
+/* FACTORY */
+
+.factory-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .8s ease;
+}
+
+.factory-card {
+  overflow: hidden;
+  position: relative;
+  background: #263c29;
+}
+
+.factory-card:hover .factory-img {
+  transform: scale(1.06);
+}
+
+.factory-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 25px;
+  background: linear-gradient(transparent, #101b13e8);
+}
+
+/* PRODUCT FILTERS */
+
+.filter-btn {
+  padding: 12px 20px;
+  border: 1px solid #101b1330;
+  color: #101b13;
+  background: transparent;
+  font-size: 11px;
+  letter-spacing: .04em;
+  transition: .25s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: #101b13;
+  color: #fff;
+  border-color: #101b13;
+}
+
+/* PRODUCT GRID AND CARDS */
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 26px;
+  align-items: stretch;
+}
+
+.product-card {
+  min-width: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  color: #101b13;
+  border: 1px solid #dedacb;
+  overflow: hidden;
+  transition:
+    transform .35s ease,
+    box-shadow .35s ease,
+    border-color .35s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-7px);
+  border-color: #c7a66b;
+  box-shadow: 0 22px 45px #101b1320;
+}
+
+/* All product images have the same frame size */
+.product-image-wrap {
+  width: 100%;
+  height: 255px;
+  flex: 0 0 255px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 15px;
+  background: #f5f3ed;
+  border-bottom: 1px solid #eeeade;
+}
+
+.product-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  transition: transform .45s ease;
+}
+
+.product-card:hover img {
+  transform: scale(1.045);
+}
+
+.product-card-content {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: flex-start;
+}
+
+.product-tag {
+  display: inline-block;
+  background: #e9e3d3;
+  color: #536c43;
+  padding: 7px 11px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.product-card h3 {
+  font-size: 23px;
+  line-height: 1.3;
+  min-height: 60px;
+}
+
+.product-description {
+  color: #101b1399;
+  font-size: 12px;
+  line-height: 1.8;
+  margin-top: 10px;
+  min-height: 66px;
+}
+
+.product-details {
+  width: 100%;
+  border-top: 1px solid #e8e4d9;
+  margin-top: 20px;
+  padding-top: 16px;
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+.product-enquire {
+  color: #536c43;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  margin-top: auto;
+  padding-top: 25px;
+  transition: color .25s ease;
+}
+
+.product-enquire:hover {
+  color: #a17b3e;
+}
+
+/* EXPORT TIMELINE */
+
+.timeline-line {
+  position: absolute;
+  left: 23px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: #c9c0aa;
+}
+
+.timeline-progress {
+  position: absolute;
+  left: 23px;
+  top: 0;
+  width: 2px;
+  height: 0;
+  background: #a98a55;
+}
+
+.timeline-step {
+  position: relative;
+  padding-left: 75px;
+  padding-bottom: 65px;
+  opacity: .4;
+  transition: opacity .4s;
+}
+
+.timeline-step.active {
+  opacity: 1;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: 13px;
+  top: 5px;
+  width: 21px;
+  height: 21px;
+  border: 1px solid #a98a55;
+  background: #eee9dc;
+  border-radius: 50%;
+  z-index: 2;
+  transition: .3s;
+}
+
+.timeline-step.active .timeline-dot {
+  background: #a98a55;
+  box-shadow: 0 0 0 7px #a98a5525;
+}
+
+/* TERMS */
+
+.terms-card {
+  border: 1px solid #c7a66b33;
+  background: #ffffff06;
+  transition: .4s;
+}
+
+.terms-card.lit {
+  border-color: #c7a66bcc;
+  background: #c7a66b0d;
+  transform: translateY(-3px);
+}
+
+.accordion-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows .4s ease;
+}
+
+.accordion-content > div {
+  overflow: hidden;
+}
+
+.accordion.open .accordion-content {
+  grid-template-rows: 1fr;
+}
+
+.accordion-icon {
+  transition: transform .3s;
+}
+
+.accordion.open .accordion-icon {
+  transform: rotate(45deg);
+}
+
+/* TRUST */
+
+.trust-section {
+  background:
+    linear-gradient(#0b160edb, #0b160ef0),
+    url('https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=2000&q=85')
+    center / cover;
+}
+
+.trust-number {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3.5rem, 8vw, 7rem);
+  color: #c7a66b;
+}
+
+/* ENQUIRY */
+
+.enquiry-section {
+  background: #eee9dc;
+  color: #101b13;
+}
+
+.form-control {
+  width: 100%;
+  min-height: 48px;
+  background: #fff;
+  border: 1px solid #d9d3c4;
+  padding: 14px 15px;
+  color: #101b13;
+  border-radius: 2px;
+  font-size: 13px;
+  outline: none;
+  transition: .25s;
+}
+
+.form-control:focus {
+  border-color: #a98a55;
+  box-shadow: 0 0 0 2px #c7a66b20;
+}
+
+.form-control::placeholder {
+  color: #89877d;
+}
+
+.form-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 9px;
+}
+
+.contact-card {
+  background: #18271b;
+  color: #eee9dc;
+}
+
+.footer-link:hover {
+  color: #c7a66b;
+}
+
+@media (max-width: 900px) {
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-title {
+    font-size: clamp(3.5rem, 15vw, 5.5rem);
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .product-image-wrap {
+    height: 270px;
+    flex-basis: 270px;
+  }
+
+  .product-card h3 {
+    min-height: 0;
+  }
+
+  .product-description {
+    min-height: 0;
+  }
+
+  .timeline-step {
+    padding-left: 60px;
+    padding-bottom: 50px;
+  }
+
+  .timeline-line,
+  .timeline-progress {
+    left: 18px;
+  }
+
+  .timeline-dot {
+    left: 8px;
+  }
+
+  #navbar {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<header id="navbar" class="fixed top-0 left-0 w-full z-50 px-5 md:px-12 py-5 transition-colors duration-300">
+  <div class="flex justify-between items-center">
+    <a href="#home" class="flex items-center gap-3">
+      <img src="logo.png" alt="Sri Sakthi Coirs Logo" class="w-14 h-14 object-contain">
+      <div>
+        <div class="font-display text-lg tracking-wide">SRI SAKTHI COIRS</div>
+        <div class="text-[8px] tracking-[.3em] text-gold">NATURE TO THE WORLD</div>
+      </div>
+    </a>
+
+    <nav class="hidden lg:flex gap-7 text-[10px] uppercase tracking-widest">
+      <a class="nav-link" href="#origin">Our Story</a>
+      <a class="nav-link" href="#factory">Factory</a>
+      <a class="nav-link" href="#products">Products</a>
+      <a class="nav-link" href="#export">Export</a>
+      <a class="nav-link" href="#terms">Trade Terms</a>
+      <a class="nav-link" href="#enquiry">Enquiry</a>
+    </nav>
+
+    <a href="#enquiry" class="hidden md:inline-flex btn-gold px-6 py-3 text-[10px] font-bold tracking-widest uppercase">
+      Get a Quote ↗
+    </a>
+
+    <button id="menuBtn" class="lg:hidden text-gold text-2xl" aria-label="Open menu" aria-expanded="false">
+      ☰
+    </button>
+  </div>
+
+  <nav id="mobileMenu" class="hidden lg:hidden bg-forest mt-5 p-6 space-y-5 text-xs uppercase tracking-widest">
+    <a class="block" href="#origin">Our Story</a>
+    <a class="block" href="#factory">Factory</a>
+    <a class="block" href="#products">Products</a>
+    <a class="block" href="#export">Export Process</a>
+    <a class="block" href="#terms">Trade Terms</a>
+    <a class="block" href="#enquiry">Product Enquiry</a>
+    <a class="block" href="#contact">Contact</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section id="home" class="hero">
+  <div class="container-main hero-content pt-24">
+    <div class="eyebrow hero-eyebrow mb-8">POLLACHI · TAMIL NADU · INDIA</div>
+
+    <h1 class="hero-title max-w-5xl">
+      Weaving Nature<br>
+      Into <span class="text-gold italic">Everyday</span><br>
+      Living.
+    </h1>
+
+    <p class="hero-description max-w-xl mt-9 text-white/70 text-sm md:text-base leading-8">
+      From the lush coconut landscapes of Pollachi to growing destinations
+      across the world. We transform nature's resources into purposeful
+      coir solutions.
+    </p>
+
+    <div class="flex flex-wrap gap-4 mt-10">
+      <a href="#products" class="btn-gold px-8 py-4 text-xs font-bold uppercase tracking-widest">
+        Explore Products ↘
+      </a>
+      <a href="#enquiry" class="outline-gold px-8 py-4 text-xs uppercase tracking-widest">
+        Request Quotation
+      </a>
+    </div>
+  </div>
+
+  <div class="absolute bottom-10 left-1/2 -translate-x-1/2 text-center scroll-indicator">
+    <div class="text-[9px] tracking-[.3em] uppercase text-white/60 mb-3">Scroll to explore</div>
+    <div class="text-gold text-xl">↓</div>
+  </div>
+</section>
+
+<!-- ORIGIN -->
+<section id="origin" class="section-light py-32 md:py-44">
+  <div class="container-main grid md:grid-cols-2 gap-16 items-center">
+    <div class="reveal">
+      <div class="eyebrow text-moss">01 / OUR ORIGIN</div>
+      <h2 class="section-heading mt-7">
+        Born from<br>the <i class="text-moss">coconut.</i>
+      </h2>
+      <div class="gold-line my-9"></div>
+
+      <p class="text-sm md:text-base leading-8 text-forest/70">
+        In Pollachi, coconut is more than a crop. It is a natural resource
+        with the potential to serve growers, manufacturers and industries
+        around the world.
+      </p>
+
+      <p class="text-sm md:text-base leading-8 text-forest/70 mt-5">
+        Sri Sakthi Coirs connects natural coconut resources with carefully
+        processed coir products and international customer requirements.
+      </p>
+    </div>
+
+    <div class="reveal">
+      <img class="w-full h-[480px] object-cover"
+        src="coconut.png"
+        alt="Tropical greenery"
+        loading="lazy">
+
+      <div class="bg-gold inline-block p-7 -mt-1">
+        <div class="font-display text-3xl text-forest">Pollachi, India</div>
+        <div class="text-[9px] tracking-[.2em] text-forest uppercase mt-2">The land of coconuts</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FACTORY GALLERY -->
+<section id="factory" class="bg-forest py-32">
+  <div class="container-main">
+
+    <div class="eyebrow">02 / BEHIND THE PROCESS</div>
+
+    <div class="flex flex-col md:flex-row justify-between gap-8 mt-5 mb-14">
+      <h2 class="section-heading">
+        Inside our <i class="text-gold">world.</i>
+      </h2>
+
+      <p class="text-white/55 text-sm leading-7 max-w-md self-end">
+        From raw coconut husks to finished coir products, discover the
+        processes behind our manufacturing and export journey.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-5">
+
+      <!-- FACTORY IMAGE 1 -->
+      <div class="factory-card h-[350px] reveal">
+        <img class="factory-img"
+             src="factory1.png"
+             alt="Sri Sakthi Coirs Factory - Raw Material"
+             loading="lazy">
+        <div class="factory-caption">
+          <div class="eyebrow">PROCESS 01</div>
+          <h3 class="text-2xl mt-2">Raw Material</h3>
+          <p class="text-xs text-white/60 mt-2">
+            Coconut husk collection and preparation
+          </p>
+        </div>
+      </div>
+
+      <!-- FACTORY IMAGE 2 -->
+      <div class="factory-card h-[350px] reveal">
+        <img class="factory-img"
+             src="factory2.png"
+             alt="Sri Sakthi Coirs Manufacturing"
+             loading="lazy">
+        <div class="factory-caption">
+          <div class="eyebrow">PROCESS 02</div>
+          <h3 class="text-2xl mt-2">Manufacturing</h3>
+          <p class="text-xs text-white/60 mt-2">
+            Processing and product preparation
+          </p>
+        </div>
+      </div>
+
+      <!-- FACTORY IMAGE 3 -->
+      <div class="factory-card h-[350px] reveal">
+        <img class="factory-img"
+             src="factory3.png"
+             alt="Sri Sakthi Coirs Quality Control"
+             loading="lazy">
+        <div class="factory-caption">
+          <div class="eyebrow">PROCESS 03</div>
+          <h3 class="text-2xl mt-2">Quality Control</h3>
+          <p class="text-xs text-white/60 mt-2">
+            Inspection and product quality testing
+          </p>
+        </div>
+      </div>
+
+      <!-- FACTORY IMAGE 4 -->
+      <div class="factory-card h-[350px] reveal">
+        <img class="factory-img"
+             src="factory4.png"
+             alt="Sri Sakthi Coirs Product Packing"
+             loading="lazy">
+        <div class="factory-caption">
+          <div class="eyebrow">PROCESS 04</div>
+          <h3 class="text-2xl mt-2">Packing</h3>
+          <p class="text-xs text-white/60 mt-2">
+            Product packaging and preparation
+          </p>
+        </div>
+      </div>
+
+      <!-- FACTORY IMAGE 5 -->
+      <div class="factory-card h-[350px] reveal">
+        <img class="factory-img"
+             src="factory5.png"
+             alt="Sri Sakthi Coirs Logistics"
+             loading="lazy">
+        <div class="factory-caption">
+          <div class="eyebrow">PROCESS 05</div>
+          <h3 class="text-2xl mt-2">Logistics</h3>
+          <p class="text-xs text-white/60 mt-2">
+            Container loading and shipment coordination
+          </p>
+        </div>
+      </div>
+
+      <!-- FACTORY IMAGE 6 -->
+      <div class="factory-card h-[350px] reveal">
+        <img class="factory-img"
+             src="factory6.png"
+             alt="Sri Sakthi Coirs Global Export"
+             loading="lazy">
+        <div class="factory-caption">
+          <div class="eyebrow">PROCESS 06</div>
+          <h3 class="text-2xl mt-2">Global Export</h3>
+          <p class="text-xs text-white/60 mt-2">
+            Connecting Pollachi to global markets
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- PRODUCT CATALOGUE -->
+<section id="products" class="section-light py-32 md:py-40">
+  <div class="container-main">
+    <div class="eyebrow text-moss">03 / OUR PRODUCT COLLECTION</div>
+
+    <h2 class="section-heading mt-6">
+      Natural products.<br>
+      <i class="text-moss">Global possibilities.</i>
+    </h2>
+
+    <p class="text-forest/60 max-w-xl text-sm leading-7 mt-6">
+      Explore our range of coconut-based growing media, horticulture
+      products and industrial fibre solutions.
+    </p>
+
+    <!-- FILTERS -->
+    <div class="flex flex-wrap gap-3 mt-12 mb-10" id="filters">
+      <button class="filter-btn active" data-filter="all">All Products</button>
+      <button class="filter-btn" data-filter="cocopeat">Cocopeat</button>
+      <button class="filter-btn" data-filter="grow">Grow Bags</button>
+      <button class="filter-btn" data-filter="chips">Coco Chips</button>
+      <button class="filter-btn" data-filter="fibre">Fibre</button>
+      <button class="filter-btn" data-filter="discs">Discs</button>
+    </div>
+
+    <!-- Product cards are generated below using images 1.png to 12.png -->
+    <div id="productGrid" class="product-grid"></div>
+
+    <div class="text-center mt-16">
+      <a href="#enquiry" class="btn-gold px-10 py-5 text-xs uppercase tracking-widest font-bold">
+        Request Product Catalogue ↗
+      </a>
+    </div>
+
+    <p class="text-forest/40 text-[10px] mt-8">
+      Product specifications and availability must be confirmed before order.
+    </p>
+  </div>
+</section>
+
+<!-- PRODUCT ENQUIRY -->
+<section id="enquiry" class="enquiry-section py-28 md:py-36">
+  <div class="container-main">
+    <div class="grid lg:grid-cols-2 gap-16">
+
+      <div class="reveal">
+        <div class="eyebrow text-moss">04 / INTERNATIONAL BUYER ENQUIRY</div>
+
+        <h2 class="section-heading mt-7">
+          Let's grow<br><i class="text-moss">together.</i>
+        </h2>
+
+        <div class="gold-line my-9"></div>
+
+        <p class="text-forest/65 text-sm leading-8 max-w-md">
+          Looking for cocopeat, grow bags, coco chips or coconut fibre?
+          Share your requirements with us. We welcome enquiries from
+          importers, distributors, wholesalers and agricultural businesses.
+        </p>
+
+        <div class="mt-12 space-y-7">
+          <div>
+            <div class="eyebrow text-moss">PHONE / WHATSAPP</div>
+            <a href="tel:+919842490398" class="text-xl mt-2 block">+91 98424 90398</a>
+          </div>
+
+          <div>
+            <div class="eyebrow text-moss">BUSINESS EMAIL</div>
+            <a href="mailto:murugan.sakthicoirs@gmail.com" class="text-sm mt-2 block break-all">
+              murugan.sakthicoirs@gmail.com
+            </a>
+          </div>
+
+          <div>
+            <div class="eyebrow text-moss">LOCATION</div>
+            <p class="text-sm mt-2">Valparai Main Road, Pollachi, Tamil Nadu, India.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ENQUIRY FORM -->
+      <div class="bg-white p-6 md:p-10 shadow-xl reveal">
+        <div class="eyebrow text-moss">SRI SAKTHI COIRS</div>
+        <h3 class="text-3xl mt-4">Request a Quotation</h3>
+        <p class="text-forest/50 text-xs mt-3 mb-9">Complete your requirements below.</p>
+
+        <form id="enquiryForm" class="space-y-5">
+
+          <div class="grid sm:grid-cols-2 gap-5">
+            <div>
+              <label class="form-label" for="buyerName">Full Name *</label>
+              <input class="form-control" id="buyerName" name="name" required placeholder="Your name">
+            </div>
+            <div>
+              <label class="form-label" for="companyName">Company Name</label>
+              <input class="form-control" id="companyName" name="company" placeholder="Company">
+            </div>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-5">
+            <div>
+              <label class="form-label" for="buyerEmail">Business Email *</label>
+              <input class="form-control" id="buyerEmail" name="email" type="email" required placeholder="name@company.com">
+            </div>
+            <div>
+              <label class="form-label" for="buyerPhone">WhatsApp / Phone</label>
+              <input class="form-control" id="buyerPhone" name="phone" type="tel" placeholder="+ Country code">
+            </div>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-5">
+            <div>
+              <label class="form-label" for="buyerCountry">Country *</label>
+              <input class="form-control" id="buyerCountry" name="country" required placeholder="Your country">
+            </div>
+            <div>
+              <label class="form-label" for="destinationPort">Destination Port</label>
+              <input class="form-control" id="destinationPort" name="port" placeholder="Port / City">
+            </div>
+          </div>
+
+          <div>
+            <label class="form-label" for="buyerProduct">Select Product *</label>
+            <select class="form-control" id="buyerProduct" name="product" required>
+              <option value="">Choose a product</option>
+              <option>5Kg Cocopeat Block</option>
+              <option>650gm Cocopeat Briquette</option>
+              <option>500gm Cocopeat Briquette</option>
+              <option>Cocopeat Grow Bags</option>
+              <option>650gm Coco Chips Block</option>
+              <option>5Kg Cocopeat & Chips Block</option>
+              <option>50L Coco Chips</option>
+              <option>200L Coco Chips</option>
+              <option>50L Cocopeat Bag</option>
+              <option>200L Cocopeat Bale</option>
+              <option>120Kg Coconut Fibre Bale</option>
+              <option>Coir Discs</option>
+              <option>Other / Multiple Products</option>
+            </select>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-5">
+            <div>
+              <label class="form-label" for="ecType">EC Requirement</label>
+              <select class="form-control" id="ecType" name="ec">
+                <option>Not specified</option>
+                <option>Low EC</option>
+                <option>High EC</option>
+                <option>As per specification</option>
+              </select>
+            </div>
+            <div>
+              <label class="form-label" for="quantity">Required Quantity *</label>
+              <input class="form-control" id="quantity" name="quantity" required placeholder="e.g. 1 container">
+            </div>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-5">
+            <div>
+              <label class="form-label" for="packing">Packing Preference</label>
+              <select class="form-control" id="packing" name="packing">
+                <option>As per requirement</option>
+                <option>Block packing</option>
+                <option>Bale packing</option>
+                <option>Bag packing</option>
+                <option>Grow bag packing</option>
+              </select>
+            </div>
+            <div>
+              <label class="form-label" for="shipping">Shipping Terms</label>
+              <select class="form-control" id="shipping" name="shipping">
+                <option>FOB</option>
+                <option>CIF</option>
+                <option>CNF / CFR</option>
+                <option>Need guidance</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label class="form-label" for="buyerMessage">Additional Requirements</label>
+            <textarea class="form-control" id="buyerMessage" name="message" rows="4" placeholder="Tell us about your specifications, moisture, EC, packaging or other requirements..."></textarea>
+          </div>
+
+          <div class="space-y-3">
+            <button type="submit" class="btn-gold w-full py-5 text-xs font-bold uppercase tracking-widest">
+              Send Enquiry via WhatsApp ↗
+            </button>
+
+            <button type="button" id="emailEnquiry" class="w-full border border-forest/20 py-4 text-xs uppercase tracking-widest hover:bg-forest hover:text-white transition">
+              Send Enquiry via Email ↗
+            </button>
+          </div>
+
+          <p class="text-[10px] leading-5 text-forest/45">
+            WhatsApp opens a pre-filled message. Email opens your email application.
+            This standalone form does not store submissions in a database.
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPORT JOURNEY -->
+<section id="export" class="section-light py-32 md:py-40">
+  <div class="container-main">
+    <div class="grid md:grid-cols-2 gap-16 mb-24">
+      <div>
+        <div class="eyebrow text-moss">05 / OUR EXPORT PROCESS</div>
+        <h2 class="section-heading mt-7">
+          From our hands<br>to the <i>world.</i>
+        </h2>
+      </div>
+
+      <p class="text-forest/60 text-sm leading-8 self-end max-w-md">
+        Every export journey follows a structured commercial process.
+        From the first enquiry to final shipment coordination, each
+        milestone has a defined purpose.
+      </p>
+    </div>
+
+    <div class="relative max-w-3xl mx-auto" id="timeline">
+      <div class="timeline-line"></div>
+      <div class="timeline-progress" id="timelineProgress"></div>
+
+      <div class="timeline-step">
+        <div class="timeline-dot"></div>
+        <div class="eyebrow text-moss">STEP 01</div>
+        <h3 class="text-3xl mt-3">Inquiry & Quotation</h3>
+        <p class="text-forest/60 text-sm leading-7 mt-4">
+          Understand product requirements, specifications, quantity, destination and pricing expectations.
+        </p>
+      </div>
+
+      <div class="timeline-step">
+        <div class="timeline-dot"></div>
+        <div class="eyebrow text-moss">STEP 02</div>
+        <h3 class="text-3xl mt-3">Order Confirmation & Payment</h3>
+        <p class="text-forest/60 text-sm leading-7 mt-4">
+          Confirm the purchase order, commercial terms, payment milestones and specifications.
+        </p>
+      </div>
+
+      <div class="timeline-step">
+        <div class="timeline-dot"></div>
+        <div class="eyebrow text-moss">STEP 03</div>
+        <h3 class="text-3xl mt-3">Production & Quality Checks</h3>
+        <p class="text-forest/60 text-sm leading-7 mt-4">
+          Prepare products according to the agreed requirements and conduct specified inspections.
+        </p>
+      </div>
+
+      <div class="timeline-step">
+        <div class="timeline-dot"></div>
+        <div class="eyebrow text-moss">STEP 04</div>
+        <h3 class="text-3xl mt-3">Packaging & Documentation</h3>
+        <p class="text-forest/60 text-sm leading-7 mt-4">
+          Arrange packaging and applicable export documents before dispatch.
+        </p>
+      </div>
+
+      <div class="timeline-step">
+        <div class="timeline-dot"></div>
+        <div class="eyebrow text-moss">STEP 05</div>
+        <h3 class="text-3xl mt-3">Global Shipping & Logistics</h3>
+        <p class="text-forest/60 text-sm leading-7 mt-4">
+          Coordinate freight, container movement and shipment communication according to agreed terms.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMERCIAL TERMS -->
+<section id="terms" class="bg-forest py-32 md:py-40">
+  <div class="container-main grid md:grid-cols-2 gap-16">
+
+    <div>
+      <div class="md:sticky md:top-32">
+        <div class="eyebrow">06 / COMMERCIAL FRAMEWORK</div>
+        <h2 class="section-heading mt-7">
+          Global Trading<br>& <i class="text-gold">Payment</i><br>Terms.
+        </h2>
+        <div class="gold-line my-10"></div>
+        <p class="text-white/55 text-sm leading-8 max-w-sm">
+          Clear communication. Defined responsibilities.
+          Structured payment milestones. Commercial confidence
+          at every stage of international trade.
+        </p>
+      </div>
+    </div>
+
+    <div class="space-y-8">
+
+      <div class="terms-card p-7 md:p-9">
+        <div class="eyebrow">01 / FREIGHT OPTIONS</div>
+        <h3 class="text-3xl mt-5">Shipping on your terms.</h3>
+        <p class="text-white/55 text-sm leading-7 mt-4">
+          Freight arrangements are agreed according to destination,
+          buyer preference and the selected Incoterms® rule.
+        </p>
+
+        <div class="grid grid-cols-3 gap-3 mt-8">
+          <div class="border border-gold/30 p-4 text-center">
+            <div class="text-gold text-2xl font-display">FOB</div>
+            <div class="text-[8px] text-white/50 mt-2">FREE ON BOARD</div>
+          </div>
+          <div class="border border-gold/30 p-4 text-center">
+            <div class="text-gold text-2xl font-display">CIF</div>
+            <div class="text-[8px] text-white/50 mt-2">COST, INSURANCE & FREIGHT</div>
+          </div>
+          <div class="border border-gold/30 p-4 text-center">
+            <div class="text-gold text-2xl font-display">CFR</div>
+            <div class="text-[8px] text-white/50 mt-2">COST & FREIGHT</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="terms-card p-7 md:p-9">
+        <div class="eyebrow">02 / PAYMENT MILESTONES</div>
+        <h3 class="text-3xl mt-5">Secure transactions.</h3>
+
+        <div class="space-y-7 mt-8">
+          <div class="border-l-2 border-gold pl-5">
+            <div class="text-gold text-xs">OPTION 01</div>
+            <h4 class="text-xl mt-2">Advance TT</h4>
+            <p class="text-white/50 text-sm leading-7 mt-2">
+              Advance payment through Telegraphic Transfer under agreed order conditions.
+            </p>
+          </div>
+
+          <div class="border-l-2 border-gold pl-5">
+            <div class="text-gold text-xs">OPTION 02</div>
+            <h4 class="text-xl mt-2">Letter of Credit at Sight</h4>
+            <p class="text-white/50 text-sm leading-7 mt-2">
+              Payment against compliant documents under an agreed documentary Letter of Credit.
+            </p>
+          </div>
+
+          <div class="border-l-2 border-gold pl-5">
+            <div class="text-gold text-xs">OPTION 03</div>
+            <h4 class="text-xl mt-2">Partial Advance against BL Copy</h4>
+            <p class="text-white/50 text-sm leading-7 mt-2">
+              A negotiated payment arrangement for approved buyers, subject to written agreement.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="terms-card p-7 md:p-9">
+        <div class="eyebrow">03 / LEGAL & CONTRACT PROTECTION</div>
+        <h3 class="text-3xl mt-5">Every detail matters.</h3>
+        <p class="text-white/50 text-sm leading-7 mt-4">
+          Contractual safeguards should be clearly documented before order acceptance.
+        </p>
+
+        <div class="mt-8 space-y-5">
+
+          <div class="accordion border-t border-white/15 pt-5">
+            <button class="accordion-trigger w-full flex justify-between text-left items-center gap-4" aria-expanded="false">
+              Quality & Moisture Safeguards
+              <span class="accordion-icon text-gold text-2xl">+</span>
+            </button>
+            <div class="accordion-content">
+              <div>
+                <p class="text-white/50 text-sm leading-7 pt-5">
+                  Each purchase contract should define target moisture content,
+                  electrical conductivity (EC), acceptable tolerances, testing
+                  methods, compression ratios, sampling procedures and inspection
+                  timing. Rejection processes should be based on agreed evidence.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion border-t border-white/15 pt-5">
+            <button class="accordion-trigger w-full flex justify-between text-left items-center gap-4" aria-expanded="false">
+              Shipping, Demurrage & Delays
+              <span class="accordion-icon text-gold text-2xl">+</span>
+            </button>
+            <div class="accordion-content">
+              <div>
+                <p class="text-white/50 text-sm leading-7 pt-5">
+                  Contracts should identify responsibilities for freight,
+                  port handling, container detention, demurrage, customs clearance,
+                  documentation handovers and unexpected transit disruptions.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion border-t border-white/15 pt-5">
+            <button class="accordion-trigger w-full flex justify-between text-left items-center gap-4" aria-expanded="false">
+              Dispute Resolution & Arbitration
+              <span class="accordion-icon text-gold text-2xl">+</span>
+            </button>
+            <div class="accordion-content">
+              <div>
+                <p class="text-white/50 text-sm leading-7 pt-5">
+                  International contracts should specify governing law,
+                  jurisdiction, dispute escalation, arbitration institution,
+                  arbitration seat, language and applicable rules.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <p class="text-white/35 text-[10px] leading-6">
+        Commercial terms are indicative. Final payment conditions, quality
+        parameters, shipping responsibilities and legal clauses must be
+        confirmed in the signed sales agreement. This is not legal advice.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<section id="trust" class="trust-section py-36 md:py-48 text-center">
+  <div class="container-main">
+    <div class="eyebrow mb-8">07 / OUR COMMITMENT</div>
+
+    <h2 class="text-4xl md:text-7xl max-w-5xl mx-auto leading-tight trust-heading">
+      Quality is not just a promise.<br>
+      <i class="text-gold">It is our responsibility.</i>
+    </h2>
+
+    <div class="grid md:grid-cols-2 gap-14 mt-24">
+      <div class="trust-item">
+        <div class="trust-number">100%</div>
+        <div class="eyebrow mt-4">QUALITY & PRODUCT DURABILITY</div>
+      </div>
+
+      <div class="trust-item">
+        <div class="trust-number">1K+</div>
+        <div class="eyebrow mt-4">SATISFIED GLOBAL CLIENTS</div>
+      </div>
+    </div>
+
+    <p class="text-white/45 text-xs mt-16 max-w-lg mx-auto leading-7">
+      Built on natural resources, product consistency and dependable
+      business relationships. Statistics should be verified before publication.
+    </p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section-light py-28 md:py-36">
+  <div class="container-main grid md:grid-cols-2 gap-16 items-center">
+
+    <div>
+      <div class="eyebrow text-moss">08 / GLOBAL CONTACT</div>
+
+      <h2 class="section-heading mt-7">
+        Your next<br>growing story<br><i class="text-moss">starts here.</i>
+      </h2>
+
+      <p class="text-forest/60 text-sm leading-8 max-w-md mt-8">
+        Looking for a dependable coir product supplier from India?
+        Connect with Sri Sakthi Coirs to discuss your product and
+        export requirements.
+      </p>
+
+      <a href="#enquiry" class="btn-gold mt-9 px-8 py-5 text-xs font-bold uppercase tracking-widest">
+        Send Your Enquiry ↗
+      </a>
+    </div>
+
+    <div class="contact-card p-8 md:p-12">
+      <div class="eyebrow">SRI SAKTHI COIRS</div>
+      <h3 class="text-3xl mt-5">Connect with us.</h3>
+
+      <div class="space-y-8 mt-12">
+        <div>
+          <div class="text-gold text-[10px] tracking-widest mb-3">LOCATION</div>
+          <p class="text-white/75 text-sm leading-7">
+            Valparai Main Road,<br>Pollachi, Tamil Nadu, India.
+          </p>
+        </div>
+
+        <div>
+          <div class="text-gold text-[10px] tracking-widest mb-3">PHONE</div>
+          <a href="tel:+919842490398" class="text-white/80 text-lg hover:text-gold">
+            +91 98424 90398
+          </a>
+        </div>
+
+        <div>
+          <div class="text-gold text-[10px] tracking-widest mb-3">EMAIL</div>
+          <a href="mailto:murugan.sakthicoirs@gmail.com" class="text-white/80 text-sm break-all hover:text-gold">
+            murugan.sakthicoirs@gmail.com
+          </a>
+        </div>
+      </div>
+
+      <a href="https://wa.me/919842490398?text=Hello%20Sri%20Sakthi%20Coirs.%20I%20am%20interested%20in%20your%20products."
+        target="_blank" rel="noopener noreferrer"
+        class="btn-gold flex justify-center py-5 mt-12 text-xs uppercase tracking-widest font-bold">
+        WhatsApp Us ↗
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-forest border-t border-white/10 py-12">
+  <div class="container-main">
+
+    <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+      <div class="flex items-center gap-3">
+        <img src="logo.png" alt="Sri Sakthi Coirs Logo" class="w-14 h-14 object-contain">
+        <div>
+          <div class="font-display text-2xl">SRI SAKTHI COIRS</div>
+          <div class="text-[9px] tracking-[.3em] text-gold mt-2">NATURE TO THE WORLD</div>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap justify-center gap-6 text-xs text-white/55">
+        <a class="footer-link" href="#origin">Our Story</a>
+        <a class="footer-link" href="#products">Products</a>
+        <a class="footer-link" href="#export">Export</a>
+        <a class="footer-link" href="#terms">Terms</a>
+        <a class="footer-link" href="#enquiry">Enquiry</a>
+      </div>
+
+      <a href="#home" class="text-gold text-xs uppercase tracking-widest">Back to Top ↑</a>
+    </div>
+
+    <div class="gold-line my-8"></div>
+
+    <div class="text-center text-white/35 text-xs">
+      © <span id="year"></span> Sri Sakthi Coirs. All Rights Reserved.
+    </div>
+  </div>
+</footer>
+
+<script>
+/* =========================================
+   PRODUCT DATA
+   Image names: 1.png to 12.png
+========================================= */
+
+const products = [
+  {
+    image: '1.png',
+    category: 'cocopeat',
+    tag: 'COCOPEAT',
+    name: '5Kg Cocopeat Block',
+    description: 'Compressed coconut growing medium designed to expand with water and support cultivation.',
+    detail1: 'Weight: 5 kg',
+    detail2: 'Variants: High EC / Low EC'
+  },
+  {
+    image: '2.png',
+    category: 'cocopeat',
+    tag: 'COCOPEAT',
+    name: '650gm Cocopeat Briquette',
+    description: 'Compact cocopeat format suitable for convenient handling and growing-medium applications.',
+    detail1: 'Weight: 650 g',
+    detail2: 'Variants: High EC / Low EC'
+  },
+  {
+    image: '3.png',
+    category: 'cocopeat',
+    tag: 'COCOPEAT',
+    name: '500gm Cocopeat Briquette',
+    description: 'A smaller compressed cocopeat format for selected horticulture and cultivation requirements.',
+    detail1: 'Weight: 500 g',
+    detail2: 'Variants: Confirm on enquiry'
+  },
+  {
+    image: '4.png',
+    category: 'grow',
+    tag: 'HORTICULTURE',
+    name: 'Cocopeat Grow Bags',
+    description: 'Growing bags for greenhouse cultivation, nurseries and professional horticulture.',
+    detail1: 'Format: Multiple sizes',
+    detail2: 'Specification: Custom requirements'
+  },
+  {
+    image: '5.png',
+    category: 'chips',
+    tag: 'COCO CHIPS',
+    name: '650gm Coco Chips Block',
+    description: 'Compressed coconut husk chips for selected growing and horticulture applications.',
+    detail1: 'Weight: 650 g',
+    detail2: 'Usage: Growing medium'
+  },
+  {
+    image: '6.png',
+    category: 'chips',
+    tag: 'COCOPEAT & CHIPS',
+    name: '5Kg Cocopeat & Chips Block',
+    description: 'Combined cocopeat and coconut chips format for specified growing applications.',
+    detail1: 'Weight: 5 kg',
+    detail2: 'Mix ratio: Confirm on enquiry'
+  },
+  {
+    image: '7.png',
+    category: 'chips',
+    tag: 'COCO CHIPS',
+    name: '50L Coco Chips',
+    description: 'Loose or packed coconut chips for horticulture and growing-medium requirements.',
+    detail1: 'Volume: 50 litres',
+    detail2: 'Packing: Subject to agreement'
+  },
+  {
+    image: '8.png',
+    category: 'chips',
+    tag: 'COCO CHIPS',
+    name: '200L Coco Chips',
+    description: 'Bulk-volume coconut chip product for commercial growing applications.',
+    detail1: 'Volume: 200 litres',
+    detail2: 'Packing: Subject to agreement'
+  },
+  {
+    image: '9.png',
+    category: 'cocopeat',
+    tag: 'COCOPEAT',
+    name: '50L Cocopeat Bag',
+    description: 'Cocopeat in a convenient volume-based packaging format for cultivation.',
+    detail1: 'Volume: 50 litres',
+    detail2: 'Variants: High EC / Low EC'
+  },
+  {
+    image: '10.png',
+    category: 'cocopeat',
+    tag: 'COCOPEAT',
+    name: '200L Cocopeat Bale',
+    description: 'Bulk compressed cocopeat packaging for commercial horticulture and growing.',
+    detail1: 'Volume: 200 litres',
+    detail2: 'Variants: High EC / Low EC'
+  },
+  {
+    image: '11.png',
+    category: 'fibre',
+    tag: 'INDUSTRIAL FIBRE',
+    name: '120Kg Coconut Fibre Bale',
+    description: 'Processed natural coconut fibre compressed into bales for industrial applications.',
+    detail1: 'Weight: 120 kg',
+    detail2: 'Usage: Industrial manufacturing'
+  },
+  {
+    image: '12.png',
+    category: 'discs',
+    tag: 'COIR DISCS',
+    name: 'Coir Discs',
+    description: 'Compressed coir discs for plant propagation, potting and nursery applications.',
+    detail1: 'Diameter: 20–100 mm',
+    detail2: 'Specifications: Confirm on enquiry'
+  }
+];
+
+/* =========================================
+   CREATE PRODUCT CARDS
+========================================= */
+
+const productGrid = document.getElementById('productGrid');
+
+function renderProducts(filter = 'all') {
+  productGrid.innerHTML = '';
+
+  const filteredProducts = products.filter(product => {
+    return filter === 'all' || product.category === filter;
+  });
+
+  filteredProducts.forEach(product => {
+    const card = document.createElement('article');
+    card.className = 'product-card';
+    card.dataset.category = product.category;
+
+    card.innerHTML = `
+      <div class="product-image-wrap">
+        <img
+          src="${product.image}"
+          alt="${product.name}"
+          loading="lazy"
+          onerror="this.style.display='none'; this.parentElement.classList.add('image-missing');"
+        >
+      </div>
+
+      <div class="product-card-content">
+        <span class="product-tag">${product.tag}</span>
+
+        <h3 class="mt-4">${product.name}</h3>
+
+        <p class="product-description">${product.description}</p>
+
+        <div class="product-details">
+          <div><b>${product.detail1.split(':')[0]}:</b> ${product.detail1.split(':').slice(1).join(':').trim()}</div>
+          <div class="mt-2"><b>${product.detail2.split(':')[0]}:</b> ${product.detail2.split(':').slice(1).join(':').trim()}</div>
+        </div>
+
+        <button class="product-enquire" type="button">
+          Enquire about product ↗
+        </button>
+      </div>
+    `;
+
+    card.querySelector('.product-enquire').addEventListener('click', () => {
+      selectProduct(product.name);
+    });
+
+    productGrid.appendChild(card);
+  });
+}
+
+renderProducts();
+
+/* =========================================
+   PRODUCT FILTER
+========================================= */
+
+const filterButtons = document.querySelectorAll('.filter-btn');
+
+filterButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    filterButtons.forEach(item => item.classList.remove('active'));
+    button.classList.add('active');
+    renderProducts(button.dataset.filter);
+  });
+});
+
+/* =========================================
+   PRODUCT ENQUIRY SHORTCUT
+========================================= */
+
+function selectProduct(productName) {
+  const select = document.getElementById('buyerProduct');
+  const matchingOption = [...select.options].find(option => {
+    return option.text.trim() === productName;
+  });
+
+  select.value = matchingOption ? matchingOption.value : 'Other / Multiple Products';
+
+  scrollToSection('#enquiry');
+}
+
+/* =========================================
+   SMOOTH SCROLL + GSAP SAFETY
+========================================= */
+
+const reduceMotion = window.matchMedia(
+  '(prefers-reduced-motion: reduce)'
+).matches;
+
+let lenis = null;
+let hasGSAP = typeof window.gsap !== 'undefined' &&
+              typeof window.ScrollTrigger !== 'undefined';
+
+if (hasGSAP) {
+  gsap.registerPlugin(ScrollTrigger);
+}
+
+if (!reduceMotion && hasGSAP && typeof window.Lenis !== 'undefined') {
+  lenis = new Lenis({
+    duration: 1.15,
+    smoothWheel: true,
+    wheelMultiplier: 0.9,
+    touchMultiplier: 1.5,
+    lerp: 0.09
+  });
+
+  lenis.on('scroll', ScrollTrigger.update);
+
+  gsap.ticker.add(time => {
+    lenis.raf(time * 1000);
+  });
+
+  gsap.ticker.lagSmoothing(0);
+}
+
+function scrollToSection(target) {
+  const element = typeof target === 'string'
+    ? document.querySelector(target)
+    : target;
+
+  if (!element) return;
+
+  if (lenis) {
+    lenis.scrollTo(element, { duration: 1.2 });
+  } else {
+    element.scrollIntoView({
+      behavior: reduceMotion ? 'auto' : 'smooth'
+    });
+  }
+}
+
+/* =========================================
+   ANCHOR NAVIGATION
+========================================= */
+
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', event => {
+    const href = link.getAttribute('href');
+    const target = document.querySelector(href);
+
+    if (!target) return;
+
+    event.preventDefault();
+    scrollToSection(target);
+    closeMobileMenu();
+  });
+});
+
+/* =========================================
+   MOBILE MENU
+========================================= */
+
+const menuBtn = document.getElementById('menuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+
+function closeMobileMenu() {
+  mobileMenu.classList.add('hidden');
+  menuBtn.textContent = '☰';
+  menuBtn.setAttribute('aria-expanded', 'false');
+}
+
+menuBtn.addEventListener('click', () => {
+  const isOpening = mobileMenu.classList.contains('hidden');
+
+  mobileMenu.classList.toggle('hidden');
+  menuBtn.textContent = isOpening ? '✕' : '☰';
+  menuBtn.setAttribute('aria-expanded', String(isOpening));
+});
+
+/* =========================================
+   CURRENT YEAR
+========================================= */
+
+document.getElementById('year').textContent = new Date().getFullYear();
+
+/* =========================================
+   GSAP ANIMATIONS
+   The website still works if GSAP fails to load.
+========================================= */
+
+if (hasGSAP && !reduceMotion) {
+  gsap.from('.hero-eyebrow', {
+    opacity: 0,
+    y: 25,
+    duration: 1,
+    delay: 0.2
+  });
+
+  gsap.from('.hero-title', {
+    opacity: 0,
+    y: 70,
+    duration: 1.4,
+    delay: 0.4,
+    ease: 'power3.out'
+  });
+
+  gsap.from('.hero-description', {
+    opacity: 0,
+    y: 25,
+    duration: 1,
+    delay: 0.8
+  });
+
+  gsap.to('.hero-content', {
+    y: -100,
+    opacity: 0.25,
+    ease: 'none',
+    scrollTrigger: {
+      trigger: '.hero',
+      start: 'top top',
+      end: 'bottom top',
+      scrub: 1
+    }
+  });
+
+  gsap.utils.toArray('.reveal').forEach(element => {
+    gsap.to(element, {
+      opacity: 1,
+      y: 0,
+      duration: 0.9,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: element,
+        start: 'top 87%',
+        toggleActions: 'play none none reverse'
+      }
+    });
+  });
+
+  const timeline = document.getElementById('timeline');
+  const steps = gsap.utils.toArray('.timeline-step');
+  const progress = document.getElementById('timelineProgress');
+
+  steps.forEach(step => {
+    ScrollTrigger.create({
+      trigger: step,
+      start: 'top 65%',
+      end: 'bottom 35%',
+      onEnter: () => step.classList.add('active'),
+      onEnterBack: () => step.classList.add('active'),
+      onLeave: () => step.classList.remove('active'),
+      onLeaveBack: () => step.classList.remove('active')
+    });
+  });
+
+  gsap.to(progress, {
+    height: '100%',
+    ease: 'none',
+    scrollTrigger: {
+      trigger: timeline,
+      start: 'top 60%',
+      end: 'bottom 60%',
+      scrub: 0.5
+    }
+  });
+
+  gsap.utils.toArray('.terms-card').forEach(card => {
+    ScrollTrigger.create({
+      trigger: card,
+      start: 'top 78%',
+      end: 'bottom 25%',
+      onEnter: () => card.classList.add('lit'),
+      onEnterBack: () => card.classList.add('lit'),
+      onLeave: () => card.classList.remove('lit'),
+      onLeaveBack: () => card.classList.remove('lit')
+    });
+  });
+
+  gsap.from('.trust-heading', {
+    y: 50,
+    opacity: 0,
+    duration: 1,
+    scrollTrigger: {
+      trigger: '#trust',
+      start: 'top 70%'
+    }
+  });
+
+  gsap.from('.trust-item', {
+    y: 60,
+    opacity: 0,
+    stagger: 0.2,
+    duration: 1,
+    scrollTrigger: {
+      trigger: '.trust-item',
+      start: 'top 85%'
+    }
+  });
+
+  ScrollTrigger.create({
+    start: 50,
+    onUpdate: self => {
+      document.getElementById('navbar').style.background =
+        self.scroll() > 50 ? 'rgba(16,27,19,.96)' : 'transparent';
+    }
+  });
+
+} else {
+  document.querySelectorAll('.reveal').forEach(element => {
+    element.style.opacity = '1';
+    element.style.transform = 'none';
+  });
+
+  document.querySelectorAll('.timeline-step').forEach(step => {
+    step.classList.add('active');
+  });
+
+  document.getElementById('timelineProgress').style.height = '100%';
+
+  document.querySelectorAll('.terms-card').forEach(card => {
+    card.classList.add('lit');
+  });
+}
+
+/* =========================================
+   ENQUIRY FORM MESSAGE
+========================================= */
+
+function getEnquiryMessage() {
+  const fields = {
+    name: document.getElementById('buyerName').value.trim(),
+    company: document.getElementById('companyName').value.trim(),
+    email: document.getElementById('buyerEmail').value.trim(),
+    phone: document.getElementById('buyerPhone').value.trim(),
+    country: document.getElementById('buyerCountry').value.trim(),
+    port: document.getElementById('destinationPort').value.trim(),
+    product: document.getElementById('buyerProduct').value,
+    ec: document.getElementById('ecType').value,
+    quantity: document.getElementById('quantity').value.trim(),
+    packing: document.getElementById('packing').value,
+    shipping: document.getElementById('shipping').value,
+    message: document.getElementById('buyerMessage').value.trim()
+  };
+
+  return `SRI SAKTHI COIRS - NEW PRODUCT ENQUIRY
+
+CUSTOMER DETAILS
+Name: ${fields.name}
+Company: ${fields.company}
+Email: ${fields.email}
+Phone: ${fields.phone}
+Country: ${fields.country}
+Destination Port: ${fields.port}
+
+PRODUCT REQUIREMENTS
+Product: ${fields.product}
+EC: ${fields.ec}
+Quantity: ${fields.quantity}
+Packing: ${fields.packing}
+Shipping: ${fields.shipping}
+
+Additional Requirements:
+${fields.message}
+
+Sent from Sri Sakthi Coirs website.`;
+}
+
+/* WhatsApp form submission */
+
+document.getElementById('enquiryForm').addEventListener('submit', event => {
+  event.preventDefault();
+
+  const form = event.currentTarget;
+  if (!form.reportValidity()) return;
+
+  const message = getEnquiryMessage();
+  const url = 'https://wa.me/919842490398?text=' + encodeURIComponent(message);
+
+  window.open(url, '_blank', 'noopener,noreferrer');
+});
+
+/* Email form submission */
+
+document.getElementById('emailEnquiry').addEventListener('click', () => {
+  const form = document.getElementById('enquiryForm');
+
+  if (!form.reportValidity()) return;
+
+  const subject = encodeURIComponent('New Product Enquiry - Sri Sakthi Coirs');
+  const body = encodeURIComponent(getEnquiryMessage());
+
+  window.location.href =
+    'mailto:murugan.sakthicoirs@gmail.com?subject=' + subject + '&body=' + body;
+});
+
+/* =========================================
+   LEGAL ACCORDION
+========================================= */
+
+document.querySelectorAll('.accordion-trigger').forEach(button => {
+  button.addEventListener('click', () => {
+    const accordion = button.closest('.accordion');
+    const isOpen = accordion.classList.toggle('open');
+
+    button.setAttribute('aria-expanded', String(isOpen));
+  });
+});
+
+/* =========================================
+   REFRESH SCROLL POSITIONS
+========================================= */
+
+window.addEventListener('load', () => {
+  if (hasGSAP) {
+    ScrollTrigger.refresh();
+  }
+});
+
+window.addEventListener('resize', () => {
+  if (hasGSAP) {
+    ScrollTrigger.refresh();
+  }
+});
+</script>
+
+</body>
+</a>
+</html>

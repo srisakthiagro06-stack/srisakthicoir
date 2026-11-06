@@ -1,0 +1,268 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | Sri Sakthi Coirs</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:'DM Sans',sans-serif;background:#f8f7f1;color:#183b2b}
+.serif{font-family:'Playfair Display',serif}
+html{scroll-behavior:smooth}
+.hero{
+ min-height:82vh;
+ background:linear-gradient(90deg,rgba(9,35,23,.82),rgba(9,35,23,.25)),
+ url('https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=2000&q=85') center/cover;
+}
+.reveal{animation:fadeUp .9s ease both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.photo{transition:transform .5s}
+.photo:hover{transform:scale(1.035)}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<nav class="bg-[#102f22] text-white px-6 md:px-14 py-5 flex justify-between items-center">
+ <a href="index.html" class="flex items-center gap-3">
+  <img src="logo.png" alt="Sri Sakthi Coirs Logo"
+     class="w-14 h-14 object-contain">
+  <div>
+   <div class="font-bold tracking-widest text-lg">SRI SAKTHI COIRS</div>
+   <div class="text-[9px] tracking-[4px] text-[#c5d5a4]">NATURAL COIR PRODUCTS</div>
+  </div>
+ </a>
+ <div class="hidden md:flex gap-8 text-sm">
+  <a href="index.html" class="hover:text-[#c5d5a4]">Home</a>
+  <a href="about.html" class="text-[#c5d5a4]">About Us</a>
+  <a href="index.html#products" class="hover:text-[#c5d5a4]">Products</a>
+  <a href="index.html#contact" class="hover:text-[#c5d5a4]">Contact</a>
+ </div>
+ <a href="index.html#contact" class="bg-[#c5d5a4] text-[#102f22] px-5 py-3 rounded-full text-sm font-bold">Enquire Now ↗</a>
+</nav>
+
+<!-- HERO -->
+<header class="hero flex items-center px-7 md:px-20 py-24 text-white">
+ <div class="max-w-3xl reveal">
+  <p class="uppercase tracking-[5px] text-sm text-[#d3e2b7] mb-6">Our Story · Pollachi, India</p>
+  <h1 class="serif text-5xl md:text-7xl leading-tight mb-7">
+   Rooted in Nature.<br>
+   <span class="text-[#c5d5a4]">Growing Globally.</span>
+  </h1>
+  <p class="text-lg md:text-xl leading-8 text-white/85 max-w-2xl">
+   Discover Sri Sakthi Coirs — bringing the natural strength of coconut
+   fibre from Pollachi to agricultural and industrial applications.
+  </p>
+  <a href="#story" class="inline-block mt-9 border border-white/70 px-7 py-4 rounded-full hover:bg-white hover:text-[#102f22] transition">
+   Discover Our Story ↓
+  </a>
+ </div>
+</header>
+
+<!-- INTRODUCTION -->
+<section id="story" class="px-7 md:px-20 py-24 grid md:grid-cols-2 gap-14 items-center">
+ <div>
+  <p class="text-sm uppercase tracking-[4px] text-[#82936b] mb-5">Who We Are</p>
+  <h2 class="serif text-4xl md:text-5xl leading-tight mb-7">
+   Nature's Resources.<br>Purposeful Solutions.
+  </h2>
+  <p class="text-[#52675a] leading-8 mb-5">
+   Sri Sakthi Coirs is based in Pollachi, Tamil Nadu, a region known for
+   its coconut-growing landscape and connection to the coir industry.
+   We focus on coconut-based coir products for agricultural and industrial use.
+  </p>
+  <p class="text-[#52675a] leading-8 mb-5">
+   Our product range includes cocopeat blocks, briquettes, grow bags,
+   coco chips and coconut fibre bales. We aim to serve customers with
+   dependable communication, careful product handling and attention
+   to their quality requirements.
+  </p>
+  <p class="text-[#52675a] leading-8">
+   From product enquiries to packaging and shipping coordination,
+   we work to make every business interaction clear and professional.
+  </p>
+ </div>
+ <div class="relative">
+  <img class="photo rounded-2xl w-full h-[470px] object-cover"
+   src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?auto=format&fit=crop&w=1100&q=85"
+   alt="Tropical coconut greenery">
+  <div class="absolute -bottom-6 -left-4 md:-left-8 bg-[#183b2b] text-white p-7 rounded-xl">
+   <div class="serif text-3xl text-[#c5d5a4]">Pollachi</div>
+   <div class="text-xs tracking-widest mt-2">TAMIL NADU · INDIA</div>
+  </div>
+ </div>
+</section>
+
+<!-- OUR ORIGIN -->
+<section class="bg-[#e9eddf] px-7 md:px-20 py-24">
+ <div class="max-w-3xl mx-auto text-center mb-14">
+  <p class="uppercase tracking-[4px] text-sm text-[#82936b] mb-5">Our Roots</p>
+  <h2 class="serif text-4xl md:text-5xl mb-6">Inspired by Pollachi</h2>
+  <p class="text-[#52675a] leading-8">
+   Surrounded by coconut-growing landscapes, Pollachi provides a meaningful
+   connection to the natural raw material behind the coir industry.
+   Our story begins with the value of the coconut palm and its many uses.
+  </p>
+ </div>
+ <div class="grid md:grid-cols-3 gap-5">
+  <img class="photo w-full h-72 object-cover rounded-xl"
+   src="https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=800&q=85" alt="Lush green landscape">
+  <img class="photo w-full h-72 object-cover rounded-xl"
+   src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?auto=format&fit=crop&w=800&q=85" alt="Tropical plants">
+  <img class="photo w-full h-72 object-cover rounded-xl"
+   src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=800&q=85" alt="Natural landscape">
+ </div>
+</section>
+
+<!-- WHAT WE DO -->
+<section class="px-7 md:px-20 py-24">
+ <div class="max-w-3xl mb-14">
+  <p class="uppercase tracking-[4px] text-sm text-[#82936b] mb-5">What We Do</p>
+  <h2 class="serif text-4xl md:text-5xl mb-6">Coir Products for Different Needs</h2>
+  <p class="text-[#52675a] leading-8">
+   We offer a range of coconut-based products for horticulture,
+   agriculture, nurseries and industrial applications.
+  </p>
+ </div>
+
+ <div class="grid md:grid-cols-3 gap-7">
+  <article class="bg-white rounded-2xl overflow-hidden shadow-sm">
+   <img class="photo w-full h-64 object-cover"
+    src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=900&q=85" alt="Growing plants in cocopeat">
+   <div class="p-7">
+    <p class="text-xs tracking-widest text-[#82936b] mb-3">01 · GROWING MEDIA</p>
+    <h3 class="serif text-2xl mb-3">Cocopeat Products</h3>
+    <p class="text-sm leading-7 text-[#647469]">
+     Cocopeat blocks and briquettes for water retention, growing media
+     preparation and horticultural applications. Available specifications
+     can be discussed according to buyer requirements.
+    </p>
+   </div>
+  </article>
+
+  <article class="bg-white rounded-2xl overflow-hidden shadow-sm">
+   <img class="photo w-full h-64 object-cover"
+    src="https://images.unsplash.com/photo-1586771107445-d3ca888129ce?auto=format&fit=crop&w=900&q=85" alt="Agricultural growing bags">
+   <div class="p-7">
+    <p class="text-xs tracking-widest text-[#82936b] mb-3">02 · CULTIVATION</p>
+    <h3 class="serif text-2xl mb-3">Grow Bags & Coco Chips</h3>
+    <p class="text-sm leading-7 text-[#647469]">
+     Products designed for greenhouse cultivation, nurseries,
+     horticulture and other growing applications.
+    </p>
+   </div>
+  </article>
+
+  <article class="bg-white rounded-2xl overflow-hidden shadow-sm">
+   <img class="photo w-full h-64 object-cover"
+    src="https://images.unsplash.com/photo-1516937941344-00b4e0337589?auto=format&fit=crop&w=900&q=85" alt="Natural fibre material">
+   <div class="p-7">
+    <p class="text-xs tracking-widest text-[#82936b] mb-3">03 · NATURAL FIBRE</p>
+    <h3 class="serif text-2xl mb-3">Coconut Fibre Bales</h3>
+    <p class="text-sm leading-7 text-[#647469]">
+     Processed coconut fibre supplied for suitable industrial
+     manufacturing and fibre-based applications.
+    </p>
+   </div>
+  </article>
+ </div>
+</section>
+
+<!-- PROCESS -->
+<section class="bg-[#102f22] text-white px-7 md:px-20 py-24">
+ <div class="max-w-3xl mb-14">
+  <p class="uppercase tracking-[4px] text-sm text-[#c5d5a4] mb-5">Our Approach</p>
+  <h2 class="serif text-4xl md:text-5xl mb-6">From Coconut to Customer</h2>
+  <p class="text-white/65 leading-8">
+   Every order involves coordination across product requirements,
+   preparation, quality checks, packaging and delivery arrangements.
+  </p>
+ </div>
+
+ <div class="grid md:grid-cols-5 gap-8">
+  <div><div class="text-[#c5d5a4] text-3xl serif mb-5">01</div><h3 class="font-bold mb-3">Enquiry</h3><p class="text-sm text-white/60 leading-7">Understand the product, quantity and destination requirements.</p></div>
+  <div><div class="text-[#c5d5a4] text-3xl serif mb-5">02</div><h3 class="font-bold mb-3">Quotation</h3><p class="text-sm text-white/60 leading-7">Discuss specifications, pricing and commercial terms.</p></div>
+  <div><div class="text-[#c5d5a4] text-3xl serif mb-5">03</div><h3 class="font-bold mb-3">Preparation</h3><p class="text-sm text-white/60 leading-7">Coordinate production and agreed product requirements.</p></div>
+  <div><div class="text-[#c5d5a4] text-3xl serif mb-5">04</div><h3 class="font-bold mb-3">Quality & Packing</h3><p class="text-sm text-white/60 leading-7">Check agreed parameters and arrange suitable packaging.</p></div>
+  <div><div class="text-[#c5d5a4] text-3xl serif mb-5">05</div><h3 class="font-bold mb-3">Shipping</h3><p class="text-sm text-white/60 leading-7">Coordinate documentation and logistics as agreed.</p></div>
+ </div>
+</section>
+
+<!-- QUALITY -->
+<section class="px-7 md:px-20 py-24 grid md:grid-cols-2 gap-14 items-center">
+ <div>
+  <p class="uppercase tracking-[4px] text-sm text-[#82936b] mb-5">Our Commitment</p>
+  <h2 class="serif text-4xl md:text-5xl mb-7">Quality Starts with Understanding</h2>
+  <p class="text-[#52675a] leading-8 mb-6">
+   Different customers have different requirements. Cocopeat specifications
+   such as EC level, moisture, pH, particle size and compression are discussed
+   and confirmed according to the product and order.
+  </p>
+  <p class="text-[#52675a] leading-8">
+   We believe in clear communication, practical coordination and transparent
+   discussions throughout the order process.
+  </p>
+ </div>
+ <img class="photo rounded-2xl w-full h-[420px] object-cover"
+  src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=1100&q=85"
+  alt="Healthy plants growing in a nursery">
+</section>
+
+<!-- EXPORT -->
+<section class="bg-[#e9eddf] px-7 md:px-20 py-24 text-center">
+ <p class="uppercase tracking-[4px] text-sm text-[#82936b] mb-5">Business & Export</p>
+ <h2 class="serif text-4xl md:text-5xl mb-7">Connecting Natural Products with Global Buyers</h2>
+ <p class="max-w-3xl mx-auto text-[#52675a] leading-8 mb-10">
+  We welcome enquiries from importers, distributors, agricultural suppliers,
+  nurseries and businesses looking for coconut-based products. Freight and
+  payment terms such as FOB, CIF or other mutually agreed arrangements can
+  be discussed during quotation.
+ </p>
+ <a href="#contact" class="inline-block bg-[#183b2b] text-white px-8 py-4 rounded-full hover:bg-[#315b40] transition">
+  Discuss Your Requirements ↗
+ </a>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="bg-[#102f22] text-white px-7 md:px-20 py-20">
+ <div class="grid md:grid-cols-2 gap-12">
+  <div>
+   <p class="uppercase tracking-[4px] text-sm text-[#c5d5a4] mb-5">Get in Touch</p>
+   <h2 class="serif text-4xl md:text-5xl mb-7">Let's Grow Together.</h2>
+   <p class="text-white/65 leading-8 max-w-md">
+    Contact Sri Sakthi Coirs for product information, specifications,
+    quotations and business enquiries.
+   </p>
+  </div>
+  <div class="space-y-7">
+   <div>
+    <p class="text-xs tracking-widest text-[#c5d5a4] mb-2">ADDRESS</p>
+    <p>Valparai Main Road, Pollachi,<br>Tamil Nadu, India.</p>
+   </div>
+   <div>
+    <p class="text-xs tracking-widest text-[#c5d5a4] mb-2">PHONE / WHATSAPP</p>
+    <a href="https://wa.me/919842490398" class="hover:text-[#c5d5a4]">+91 98424 90398</a>
+   </div>
+   <div>
+    <p class="text-xs tracking-widest text-[#c5d5a4] mb-2">EMAIL</p>
+    <a href="mailto:murugan.sakthicoirs@gmail.com" class="hover:text-[#c5d5a4]">murugan.sakthicoirs@gmail.com</a>
+   </div>
+  </div>
+ </div>
+ <div class="border-t border-white/15 mt-16 pt-7 flex flex-col md:flex-row justify-between gap-4 text-xs text-white/50">
+  <p>© 2026 SRI SAKTHI COIRS. ALL RIGHTS RESERVED.</p>
+  <p>ROOTED IN NATURE · CONNECTED TO THE WORLD</p>
+ </div>
+</section>
+
+<a href="https://wa.me/919842490398" target="_blank"
+ class="fixed bottom-6 right-6 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-xl z-50"
+ aria-label="Chat on WhatsApp">☏</a>
+
+</body>
+</html>
